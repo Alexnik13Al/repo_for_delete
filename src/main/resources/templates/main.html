@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Stack Overflow</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.sstatic.net/Shared/stacks.css?v=35c687804e82">
+    <link rel="stylesheet" type="text/css" href="https://cdn.sstatic.net/Sites/ru/primary.css?v=9b7efe4995fc">
+</head>
+<body class="home-page unified-theme">
+<div class="container">
+    <div class="s-topbar ps-fixed t0 l0 js-top-bar">
+        <div class="s-topbar--container">
+            <a href="/" style="font-size: 26px; color: black"><b>Stack Overflow</b></a>
+            <form id="search" role="search" action="/search" class="s-topbar--searchbar js-searchbar "
+                  autocomplete="off">
+                <div class="s-topbar--searchbar--input-group">
+                    <input name="q" type="text" role="combobox" placeholder="Поиск..." value="" autocomplete="off"
+                           maxlength="240" class="s-input s-input__search js-search-field wmn1 " aria-label="Поиск"
+                           aria-controls="top-search" data-controller="s-popover" data-action="focus->s-popover#show"
+                           data-s-popover-placement="bottom-start" aria-expanded="false">
+                    <svg aria-hidden="true" class="s-input-icon s-input-icon__search svg-icon iconSearch" width="18"
+                         height="18" viewBox="0 0 18 18">
+                        <path d="m18 16.5-5.14-5.18h-.35a7 7 0 1 0-1.19 1.19v.35L16.5 18zM12 7A5 5 0 1 1 2 7a5 5 0 0 1 10 0"></path>
+                    </svg>
+                    <div class="s-popover p0 wmx100 wmn4 sm:wmn-initial js-top-search-popover" id="top-search"
+                         role="menu">
+                        <div class="s-popover--arrow"></div>
+                        <div class="s-popover--content">
+                            <div class="js-spinner p24 d-flex ai-center jc-center d-none">
+                                <div class="s-spinner s-spinner__sm fc-orange-400">
+                                    <div class="v-visible-sr">Загрузка…</div>
+                                </div>
+                            </div>
+                            <span class="v-visible-sr js-screen-reader-info"></span>
+                            <div class="js-ac-results overflow-y-auto hmx3 d-none"></div>
+                            <div class="js-search-hints" aria-describedby="Tips for searching"></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <nav class="h100 ml-auto overflow-x-auto pr12" aria-label="Topbar">
+                <ol class="s-topbar--content" role="menubar">
+                    <li role="none">
+                        <button class="s-topbar--item s-btn s-btn__icon s-btn__muted d-none sm:d-inline-flex js-searchbar-trigger"
+                                role="menuitem" aria-label="Поиск" aria-haspopup="true" aria-controls="search"
+                                title="Click to show search">
+                            <svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18"
+                                 viewBox="0 0 18 18">
+                                <path d="m18 16.5-5.14-5.18h-.35a7 7 0 1 0-1.19 1.19v.35L16.5 18zM12 7A5 5 0 1 1 2 7a5 5 0 0 1 10 0"></path>
+                            </svg>
+                        </button>
+                    </li>
+
+                    <li role="none"><a
+                            href="/profile"
+                            class="s-topbar--item s-topbar--item__unset ml4 s-btn s-btn__filled ws-nowrap">Мой профиль</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div id="left-sidebar" data-is-here-when="md lg" class="left-sidebar js-pinned-left-sidebar ps-relative">
+        <div class="left-sidebar--sticky-container js-sticky-leftnav">
+            <nav aria-label="Меню">
+                <ol class="nav-links">
+                    <li>
+                        <ol class="nav-links">
+                            <li class="ps-relative youarehere" aria-current="true">
+                                <a href="/" class="s-block-link pl8 js-gps-track nav-links--link -link__with-icon"
+                                   data-gps-track="top_nav.click({is_current: true, location:1, destination:8,  has_activity_notification:False});home_nav.click({location:1})"
+                                   aria-controls="" data-controller=" " data-s-popover-placement="right"
+                                   aria-current="page" data-s-popover-auto-show="true"
+                                   data-s-popover-hide-on-outside-click="never">
+                                    <div class="d-flex ai-center">
+                                        <svg aria-hidden="true" class="svg-icon iconHome" width="18" height="18"
+                                             viewBox="0 0 18 18">
+                                            <path d="M15 10v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5H0l9-9 9 9zm-8 1v6h4v-6z"></path>
+                                        </svg>
+                                        <span class="-link--channel-name pl6">Главная</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="ps-relative" aria-current="false">
+                                <a id="nav-questions" href="/questions"
+                                   class="s-block-link pl8 js-gps-track nav-links--link -link__with-icon"
+                                   data-gps-track="top_nav.click({is_current: false, location:1, destination:1,  has_activity_notification:False})"
+                                   aria-controls="" data-controller=" " data-s-popover-placement="right"
+                                   aria-current="false" data-s-popover-auto-show="true"
+                                   data-s-popover-hide-on-outside-click="never">
+                                    <div class="d-flex ai-center">
+                                        <svg aria-hidden="true" class="svg-icon iconQuestionRu" width="18" height="18"
+                                             viewBox="0 0 18 18">
+                                            <path d="M7.65 10.69h1.42q.6 0 .91-.28a1 1 0 0 0 .33-.77q0-1.1-1.14-1.12H7.65zm1.23-3.34q1.25-.03 1.25-1 0-.55-.32-.78-.3-.25-1-.25H7.65v2.03zM1 18l3-3h11c1.09 0 2-.91 2-2V4c0-1.09-.91-2-2-2H3a2 2 0 0 0-2 2zM6 3.98h2.8q1.47 0 2.22.56t.76 1.64q0 .6-.3 1.05-.31.45-.85.65.61.15.97.63.36.46.36 1.14 0 1.16-.74 1.76-.75.6-2.1.6H6z"></path>
+                                        </svg>
+                                        <span class="-link--channel-name pl6">Вопросы</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="ps-relative" aria-current="false">
+                                <a href="/tags" class="s-block-link pl8 js-gps-track nav-links--link -link__with-icon"
+                                   data-gps-track="top_nav.click({is_current: false, location:1, destination:2,  has_activity_notification:False})"
+                                   aria-controls="" data-controller=" " data-s-popover-placement="right"
+                                   aria-current="false" data-s-popover-auto-show="true"
+                                   data-s-popover-hide-on-outside-click="never">
+                                    <div class="d-flex ai-center">
+                                        <svg aria-hidden="true" class="svg-icon iconTags" width="18" height="18"
+                                             viewBox="0 0 18 18">
+                                            <path d="M9.24 1a3 3 0 0 0-2.12.88l-5.7 5.7a2 2 0 0 0-.38 2.31 3 3 0 0 1 .67-1.01l6-6A3 3 0 0 1 9.83 2H14a3 3 0 0 1 .79.1A2 2 0 0 0 13 1z"
+                                                  opacity=".4"></path>
+                                            <path d="M9.83 3a2 2 0 0 0-1.42.59l-6 6a2 2 0 0 0 0 2.82L6.6 16.6a2 2 0 0 0 2.82 0l6-6A2 2 0 0 0 16 9.17V5a2 2 0 0 0-2-2zM12 9a2 2 0 1 1 0-4 2 2 0 0 1 0 4"></path>
+                                        </svg>
+                                        <span class="-link--channel-name pl6">Метки</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="pb24"></li>
+                            <li class="ps-relative" aria-current="false">
+                                <a id="nav-users" href="/users"
+                                   class="s-block-link pl8 js-gps-track nav-links--link -link__with-icon"
+                                   data-gps-track="top_nav.click({is_current: false, location:1, destination:3,  has_activity_notification:False})"
+                                   aria-controls="" data-controller=" " data-s-popover-placement="right"
+                                   aria-current="false" data-s-popover-auto-show="true"
+                                   data-s-popover-hide-on-outside-click="never">
+                                    <div class="d-flex ai-center">
+                                        <svg aria-hidden="true" class="svg-icon iconPeople" width="18" height="18"
+                                             viewBox="0 0 18 18">
+                                            <path d="M17 14c0 .44-.45 1-1 1H9a1 1 0 0 1-1-1H2c-.54 0-1-.56-1-1 0-2.63 3-4 3-4s.23-.4 0-1c-.84-.62-1.06-.59-1-3s1.37-3 2.5-3 2.44.58 2.5 3-.16 2.38-1 3c-.23.59 0 1 0 1s1.55.71 2.42 2.09c.78-.72 1.58-1.1 1.58-1.1s.23-.4 0-1c-.84-.61-1.06-.58-1-3s1.37-3 2.5-3 2.44.59 2.5 3c.05 2.42-.16 2.39-1 3-.23.6 0 1 0 1s3 1.38 3 4"></path>
+                                        </svg>
+                                        <span class="-link--channel-name pl6">Участники</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="ps-relative" aria-current="false">
+                                <a id="nav-unanswered" href="/unanswered"
+                                   class="s-block-link pl8 js-gps-track nav-links--link -link__with-icon"
+                                   data-gps-track="top_nav.click({is_current: false, location:1, destination:5,  has_activity_notification:False})"
+                                   aria-controls="" data-controller=" " data-s-popover-placement="right"
+                                   aria-current="false" data-s-popover-auto-show="true"
+                                   data-s-popover-hide-on-outside-click="never">
+                                    <div class="d-flex ai-center">
+                                        <svg aria-hidden="true" class="svg-icon iconAnswerRu" width="18" height="18"
+                                             viewBox="0 0 18 18">
+                                            <path d="M9.78 5.9q-.45-.66-1.3-.66-.82 0-1.28.65-.45.64-.45 1.9v.4q0 1.22.45 1.9t1.3.68 1.28-.65q.45-.66.45-1.91v-.4q0-1.26-.45-1.91M3 15h11l3 3V4c0-1.09-.91-2-2-2H3a2 2 0 0 0-2 2v9c0 1.09.91 2 2 2m8.5-4.74a3.15 3.15 0 0 1-3 1.87q-1 0-1.78-.48a3 3 0 0 1-1.22-1.37 5 5 0 0 1-.43-2.05v-.4q0-1.2.42-2.09a3.2 3.2 0 0 1 3-1.87q1 0 1.78.49.78.48 1.21 1.38t.43 2.08v.36q0 1.2-.42 2.08"></path>
+                                        </svg>
+                                        <span class="-link--channel-name pl6">Неотвеченные</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div id="content" class="snippet-hidden"></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="/static/js/sidebar.js"></script>
+<script type="text/javascript" src="/static/js/header.js"></script>
+<script type="text/javascript" src="/static/js/footer.js"></script>
+</body>
+</html>

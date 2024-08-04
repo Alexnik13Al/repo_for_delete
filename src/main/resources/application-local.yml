@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST_LOCAL:localhost}:${DB_PORT_LOCAL:5432}/${DB_NAME_LOCAL:stackover_resource_service}?characterEncoding=UTF-8&useUnicode=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: ${DB_USER_LOCAL:postgres}
+    password: ${DB_PASSWORD_LOCAL:root}
+    driver-class-name: org.postgresql.Driver
+
+
+  liquibase:
+    enabled: true
+    change-log: db/changelog/db.changelog-master.xml
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: https://eureka:8761/eureka/
